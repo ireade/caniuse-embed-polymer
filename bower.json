@@ -1,8 +1,8 @@
 {
   "name": "caniuse-embed",
-  "version": "0.0.0",
-  "homepage": "https://github.com/Polymer/element-tutorial",
-  "license": "MIT",
+  "version": "1.0.0",
+  "homepage": "https://ireade.github.io/caniuse-embed-polymer",
+  "license": "Apache 2",
   "ignore": [
     "**/.*",
     "node_modules",
