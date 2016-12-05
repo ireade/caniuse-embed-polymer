@@ -20,7 +20,10 @@ Property | Description
 `futureVersions` | The number of future browser versions to display in the embed
 `pastVersions` | The number of past browser versions to display in the embed
 
-For example, the following will create an embed for the "" property, only displaying the past 3 browser versions.
+
+## Examples
+
+**1. Create an embed for the "SVG Effects for HTML" feature, displaying one future version and two past browser versions**
 
 
 <!--
@@ -35,5 +38,23 @@ For example, the following will create an embed for the "" property, only displa
 ```
 -->
 ```html
-<caniuse-embed feature="viewport-units" future-versions="1" past-versions="2"></caniuse-embed>
+<caniuse-embed feature="svg-html" futureVersions="1" pastVersions="2"></caniuse-embed>
+```
+
+
+**2. Create an embed for "Viewport Units" feature, displaying only the current browser version**
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <link rel="import" href="caniuse-embed.html">
+    <link rel="import" href="../other-element/other-element.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<caniuse-embed feature="viewport-units"></caniuse-embed>
 ```
