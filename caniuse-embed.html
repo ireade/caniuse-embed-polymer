@@ -23,10 +23,8 @@ For example, the following element will generate an embed for the feature, "SVG 
       }
     </style>
 
-    <iframe src="//caniuse.bitsofco.de/embed/index.html?feat=[[feature]]&periods=[[periods]]"
-            frameborder="0"
-            width="100%"
-            height="400px"></iframe>
+    <!-- HTML added in ready() -->
+
   </template>
 
   <script>
@@ -40,32 +38,44 @@ For example, the following element will generate an embed for the feature, "SVG 
       futureVersions: String,
 
       /* The number of previous browser versions to display (optional) */
-      pastVersions: String,
-
-      /* An internally used property (don't specify) */
-      periods: String
+      pastVersions: String
     },
     ready: function() {
 
       if ( !this.feature ) this.textContent = `A feature was not included. Go to <a href='http://caniuse.bitsofco.de/#how-to-use'>http://caniuse.bitsofco.de/#how-to-use</a> to generate an embed.`;
 
-      let future = '';
-      if ( this.futureVersions ) {
-        for (let i = 1; i < parseInt(this.futureVersions) + 1; i++) {
-          future += `future_${i},`
-        }
-      }
+      const periods = calculatePeriods(this.futureVersions, this.pastVersions);
 
-      let past = '';
-      if ( this.pastVersions ) {
-        for (let i = 1; i < parseInt(this.pastVersions) + 1; i++) {
-          past += `,past_${i}`
-        }
-      }
+      this.innerHTML = `
+      <iframe src="//caniuse.bitsofco.de/embed/index.html?feat=${this.feature}&periods=${periods}"
+              frameborder="0"
+              width="100%"
+              height="400px"></iframe>
+      `;
 
-      this.periods = future + 'current' + past;
     }
   });
+
+
+  function calculatePeriods(futureVersions, pastVersions) {
+
+    let future = '';
+    if ( futureVersions ) {
+      for (let i = 1; i < parseInt(futureVersions) + 1; i++) {
+        future += `future_${i},`
+      }
+    }
+
+    let past = '';
+    if ( pastVersions ) {
+      for (let i = 1; i < parseInt(pastVersions) + 1; i++) {
+        past += `,past_${i}`
+      }
+    }
+
+    return future + 'current' + past;
+
+  }
 
 
   // Handle Sizing of iFrame
