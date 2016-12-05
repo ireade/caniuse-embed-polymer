@@ -2,10 +2,8 @@
 
 `<caniuse-embed>` is a Polymer Element that displays feature support data from [caniuse.com](https://caniuse.com) for multiple versions of the 10 major browsers. It is configurable, reliable, and fully responsive. This Polymer element is based on the [original JavaScript embed](https://caniuse.bitsofco.de/).
 
-![Desktop View of Embed](screenshot-desktop.png)
-
-![Mobile View of Embed](screenshot-mobile.png)
-
+<img src="screenshot-desktop.png" alt="Desktop View of Embed" style="width: 100%;">
+<img src="screenshot-mobile.png" alt="Mobile View of Embed" style="width: 100%; max-width: 300px;">
 
 ## Installation
 
