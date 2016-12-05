@@ -1,5 +1,8 @@
 # `<caniuse-embed>`
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://beta.webcomponents.org/element/ireade/caniuse-embed-polymer)
+
+
 `<caniuse-embed>` is a Polymer Element that displays feature support data from [caniuse.com](https://caniuse.com) for multiple versions of the 10 major browsers. It is configurable, reliable, and fully responsive. This Polymer element is based on the [original JavaScript embed](https://caniuse.bitsofco.de/).
 
 <img src="screenshot-desktop.png" alt="Desktop View of Embed" style="width: 100%;">
