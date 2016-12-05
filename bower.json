@@ -1,8 +1,21 @@
 {
   "name": "caniuse-embed",
+  "main": "caniuse-embed.html",
+  "author": [
+    "Ire Aderinokun <ire@ireaderinokun.com>"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "caniuse"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ireade/caniuse-embed-polymer"
+  },
   "version": "1.0.0",
   "homepage": "https://ireade.github.io/caniuse-embed-polymer",
-  "license": "Apache 2",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
