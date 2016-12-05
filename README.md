@@ -22,8 +22,8 @@ There are three properties you can add to the element for configuration -
 Property | Description
 ---------|-------------
 `feature` (required) | The feature slug, retrieved from caniuse.com
-`futureVersions` | The number of future browser versions to display in the embed
-`pastVersions` | The number of past browser versions to display in the embed
+`futureVersions` | The number of future browser versions to display in the embed (max 3)
+`pastVersions` | The number of past browser versions to display in the embed (max 5)
 
 
 ## Examples
@@ -43,7 +43,7 @@ Property | Description
 ```
 -->
 ```html
-<caniuse-embed feature="svg-html" futureVersions="1" pastVersions="2"></caniuse-embed>
+<caniuse-embed feature="svg-html" future-versions="1" past-versions="2"></caniuse-embed>
 ```
 
 

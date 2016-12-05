@@ -1,18 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
 
-<!--
-## The (Unofficial) CanIUse Embed
-
-`<caniuse-embed>` is a Polymer Element that displays feature support data from caniuse for multiple versions of the 10 major browsers. Configurable, reliable, and fully responsive. Based on this [original JavaScript embed](https://caniuse.bitsofco.de/).
-
-For example, the following element will generate an embed for the feature, "SVG Effects for HTML"
-
-    <caniuse-embed feature="svg-html" futureVersions="1" pastVersions="2"></caniuse-embed>
-
-<img src="https://github.com/ireade/caniuse-embed/raw/gh-pages/example.png" alt="" style="width: 100%">
-
--->
-
 <dom-module id="caniuse-embed">
 
   <template>
@@ -61,20 +48,21 @@ For example, the following element will generate an embed for the feature, "SVG 
 
     let future = '';
     if ( futureVersions ) {
-      for (let i = 1; i < parseInt(futureVersions) + 1; i++) {
+      futureVersions = parseInt(futureVersions) > 3 ? 3 : parseInt(futureVersions);
+      for (let i = 1; i < futureVersions + 1; i++) {
         future += `future_${i},`
       }
     }
 
     let past = '';
     if ( pastVersions ) {
-      for (let i = 1; i < parseInt(pastVersions) + 1; i++) {
+      pastVersions = parseInt(pastVersions) > 5 ? 5 : parseInt(pastVersions);
+      for (let i = 1; i < pastVersions + 1; i++) {
         past += `,past_${i}`
       }
     }
 
     return future + 'current' + past;
-
   }
 
 
